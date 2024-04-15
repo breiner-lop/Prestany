@@ -15,8 +15,7 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
-body {
+.content_bg {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
