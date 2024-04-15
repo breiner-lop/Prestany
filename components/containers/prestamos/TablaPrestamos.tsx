@@ -117,8 +117,8 @@ else{
             <thead className="rounded-lg text-base text-white font-semibold w-full">
               <tr className="bg-[#222E3A]/[6%]">
                 {
-                    columns.map((columna)=>{
-                        return <th className="py-3 px-3 text-[#212B36] sm:text-base font-bold whitespace-nowrap">
+                    columns.map((columna, idx)=>{
+                        return <th key={columna.nombreColumna + idx} className="py-3 px-3 text-[#212B36] sm:text-base font-bold whitespace-nowrap">
                        {columna.nombreColumna}
                       </th>
                     })
@@ -128,10 +128,10 @@ else{
             <tbody>
               { data.length ?
               rowsToShow?.map((item: any, index:number) => (
-                <tr className="border-b">
+                <tr className="border-b" key={index}>
                     {
-                        columns.map((columna)=>{
-                            return <th className="py-3 px-3 text-[#212B36] sm:text-base font-medium whitespace-nowrap">
+                        columns.map((columna, idx)=>{
+                            return <th key={columna.field + idx} className="py-3 px-3 text-[#212B36] sm:text-base font-medium whitespace-nowrap">
                                 
                            {
                             cellRenderer({field: columna.field, value: item[columna.field], type: columna.type, index})
