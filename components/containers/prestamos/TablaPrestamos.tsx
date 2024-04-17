@@ -44,8 +44,7 @@ const columns =[
     }
 ]
 const TablaPrestamos = ({data, numerOfItems=0}:any) => {
-    console.log("ffhbddhf")
-  const [rowsLimit] = useState(10);
+  const [rowsLimit] = useState(8);
   const [rowsToShow, setRowsToShow] = useState([]);
   const [customPagination, setCustomPagination] = useState([]);
   const [totalPage] = useState(
@@ -131,7 +130,7 @@ else{
                 <tr className="border-b" key={index}>
                     {
                         columns.map((columna, idx)=>{
-                            return <th key={columna.field + idx} className="py-3 px-3 text-[#212B36] sm:text-base font-medium whitespace-nowrap">
+                            return <th key={columna.field + idx} className="py-1 px-3 text-[#212B36] sm:text-base font-medium whitespace-nowrap">
                                 
                            {
                             cellRenderer({field: columna.field, value: item[columna.field], type: columna.type, index})
